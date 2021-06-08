@@ -21,7 +21,7 @@ Execute the following python command to train STHAN-SR:
 ```python
 python train_nyse.py -m NYSE -l 16 -u 64 -a 1 -e NYSE_rank_lstm_seq-8_unit-32_0.csv.npy 
 python train_nasdaq.py
-!python train_nasdaq.py -l 16 -u 64 -a 0.1
+python train_nasdaq.py -l 16 -u 64 -a 0.1
 ```
 
 ## Cite
