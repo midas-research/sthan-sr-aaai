@@ -67,6 +67,7 @@ class HGAT(torch.nn.Module):
         self.attention = Attention(32)
         self.hatt1 = nn.HypergraphConv(32, 32, use_attention=True, heads=4, concat=False, negative_slope=0.2, dropout=0.5, bias=True)
         self.hatt2 = nn.HypergraphConv(32, 32, use_attention=True, heads=1, concat=False, negative_slope=0.2, dropout=0.5, bias=True)
+        self.liear = torch.nn.Linear(32,1)
 
     def forward(self,price_input,e):
         context,query  = self.grup(price_input)
@@ -75,4 +76,4 @@ class HGAT(torch.nn.Module):
         output = output.reshape((1737,32))
         x = F.leaky_relu(self.hatt1(output,e), 0.2)
         x = F.leaky_relu(self.hatt2(x,e), 0.2)
-        return F.leaky_relu(x)
+        return F.leaky_relu(self.liear(x))
