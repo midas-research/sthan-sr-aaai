@@ -3,7 +3,7 @@
 This codebase contains the python scripts for STHAN-SR, the model for the AAAI 2021 paper [link](https://ojs.aaai.org/index.php/AAAI/article/view/16127).
 
 ## Environment & Installation Steps
-Python 3.6, Pytorch, and networkx.
+Python 3.6, Pytorch, Pytorch-Geometric and networkx.
 
 
 ```python
